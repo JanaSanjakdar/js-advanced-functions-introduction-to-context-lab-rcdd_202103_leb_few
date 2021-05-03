@@ -75,12 +75,25 @@ let timeOut = emp.timeOutEvents.find (x => x.date === timeStamp)
 let hoursWorked = (timeOut.hour - timeIn.hour) /100
   return hoursWorked
 }*/
-
-function wagesEarnedOnDate(emp, timeStamp){
+let wagesEarnedOnDate = function(dateRequested){
+    let wage = hoursWorkedOnDate.call(this, dateRequested) * this.payPerHour
+    return parseFloat(wage.toString())
+}
+/*function wagesEarnedOnDate(emp, timeStamp){
     return hoursWorkedOnDate(emp, timeStamp) * emp.payPerHour
+}*/
+let findEmployeeByFirstName = function(employees, firstName){
+    return employees.find(function(record){
+        return record.firstName === firstName
+    })
 }
 
-function allWagesFor (emp){
+let calculatePayroll = function(employees){
+    return employees.reduce(function(memo, rec){
+        return memo + allWagesFor.call(rec)
+    }, 0)
+}
+/*function allWagesFor (emp){
 let availableDates = emp.timeInEvents.map((e) => {return e.date})
 let payable =availableDates.reduce(function(totalPay,date){
   return totalPay + wagesEarnedOnDate(emp, timeStamp)
@@ -91,7 +104,7 @@ return payable
 
 function findEmployeeByFirstName (srcArray,firstName){
   return srcArray.find(x=> { return x.firstName === firstName})
-}
+}*/
 
 
 function calculatePayroll(emp){
