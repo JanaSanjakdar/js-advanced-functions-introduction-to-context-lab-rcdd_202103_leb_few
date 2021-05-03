@@ -1,20 +1,27 @@
 // Your code here
-function createEmployeeRecord(array) {
-  let emp= {firstName: array[0],
+//function createEmployeeRecord(array) {
+//  let emp= 
+let createEmployeeRecord = fucntion(record){
+return  {firstName: array[0],
             familyName: array[1],
             title: array[2],
             payPerHour: array[3],
             timeInEvents: [],
-            timeOutEvents: []}
-            return emp
+            timeOutEvents: []
           }
-
-function createEmplees (arrayOfArrays){
+          //  return emp
+          }
+let createEmployeeRecord = function (emploeeRecordData){
+  return employeeRecordData.map(function(record){
+    return createEmployeeRecord(record)
+  })
+}
+/*function createEmplees (arrayOfArrays){
   let employees =[];
   arrayOfArrays.forEach (emp => {employees.push(createEmployeeRecord(emp))
   });
   return employees
-}
+}*/
 
 function createTimeInEvent (emp,timeStamp){
   let hour = parseInt (timeStamp.split(' ')[1])
