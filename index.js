@@ -11,11 +11,11 @@ return  {firstName: array[0],
           }
           //  return emp
           }
-let createEmployeeRecord = function (emploeeRecordData){
+let createEmployeeRecords = function(employeeRecordData){
   return employeeRecordData.map(function(record){
-    return createEmployeeRecord(record)
-  })
-}
+      return createEmployeeRecord(record)
+    })
+  }
 /*function createEmplees (arrayOfArrays){
   let employees =[];
   arrayOfArrays.forEach (emp => {employees.push(createEmployeeRecord(emp))
