@@ -80,5 +80,3 @@ let findEmployeeByFirstName = function(srcArray, firstName) {
           return memo + allWagesFor(rec)
       }, 0)
   }
-
-
