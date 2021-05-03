@@ -22,8 +22,16 @@ let createEmployeeRecord = function (emploeeRecordData){
   });
   return employees
 }*/
-
-function createTimeInEvent (emp,timeStamp){
+let createTimeInEvent = function(dateTimeInStamp){
+    let [date, hour] = dateTimeInStamp.split(' ');
+    this.timeInEvents.push({
+        type: "TimeIn",
+        hour: parseInt(hour, 10),
+        date: date,
+    })
+    return this
+}
+/*function createTimeInEvent (emp,timeStamp){
   let hour = parseInt (timeStamp.split(' ')[1])
   let date = timeStamp.split (' ')[0]
   emp.timeInEvents.push({
@@ -32,7 +40,7 @@ function createTimeInEvent (emp,timeStamp){
     date: date
   })
   return emp
-}
+}*/
 
 function createTimeOutEvent(emp, timeStamp){
   let hour = parseInt (timeStamp.split(' ')[1])
