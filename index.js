@@ -60,13 +60,21 @@ let createTimeOutEvent = function(dateTimeOutStamp){
   })
   return emp
 }*/
-
-function hoursWorkedOnDate (emp, timeStamp){
+let hoursWorkedOnDate = function(dateRequested){
+    let inEvent = this.timeInEvents.find(function(e){
+        return e.date === dateRequested;
+    })
+    let outEvent = this.timeOutEvents.find(function(e){
+        return e.date === dateRequested;
+    })
+    return (outEvent.hour - inEvent.hour) / 100;
+}
+/*function hoursWorkedOnDate (emp, timeStamp){
 let timeIn = emp.timeEvents.fint(x=> x.date === timeStamp)
 let timeOut = emp.timeOutEvents.find (x => x.date === timeStamp)
 let hoursWorked = (timeOut.hour - timeIn.hour) /100
   return hoursWorked
-}
+}*/
 
 function wagesEarnedOnDate(emp, timeStamp){
     return hoursWorkedOnDate(emp, timeStamp) * emp.payPerHour
