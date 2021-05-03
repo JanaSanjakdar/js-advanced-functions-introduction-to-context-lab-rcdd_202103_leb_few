@@ -1,6 +1,6 @@
 // Your code here
 //function createEmployeeRecord(array) {
-//  let emp= 
+//  let emp=
 let createEmployeeRecord = fucntion(record){
 return  {firstName: array[0],
             familyName: array[1],
